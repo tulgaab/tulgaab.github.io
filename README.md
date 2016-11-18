@@ -1,79 +1,32 @@
-Firebase Cloud Messaging Quickstart
-===================================
+Firebase Realtime Database Quickstart
+=============================
 
-The Firebase Cloud Messaging quickstart demonstrates how to:
-- Request permission to send app notifications to the user.
-- Receive FCM messages using the Firebase Cloud Messaging JavaScript SDK.
+The Firebase Database quickstart demonstrates how to connect to the Firebase Realtime Database and
+to send and retrieve data through a simple social blogging app. It will interoperate with the iOS and
+Android database quickstarts.
 
 Introduction
 ------------
 
-- [Read more about Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)
+- [Read more about Firebase Database](https://firebase.google.com/docs/database/)
 
 Getting Started
 ---------------
 
-1. Set up your project on the [Firebase Console](https://console.firebase.google.com).
-2. Paste initialization snippet into `index.html` with the one generated from
-   the Firebase Console **Overview > Add Firebase to your web app**. See TODO in
-   `index.html`.
-3. Run the app
-     - Install the [Firebase CLI](https://firebase.google.com/docs/cli/)
-     - Use command `firebase serve -p 8081` to serve app locally.
-     - Open http://localhost:8081 in your browser.
-4. Click REQUEST PERMISSION button to request permission for the app to send
-   notifications to the browser.
-5. Use the generated Instance ID token to send an HTTP request to FCM that
-   delivers the message to the web application, inserting appropriate values
-   for [YOUR-SERVER-KEY](https://console.firebase.google.com/project/_/settings/cloudmessaging)
-   and YOUR-IID-TOKEN.
-
-### HTTP
-```
-POST /fcm/send HTTP/1.1
-Host: fcm.googleapis.com
-Authorization: key=YOUR-SERVER-KEY
-Content-Type: application/json
-
-{
-  "notification": {
-    "title": "Portugal vs. Denmark",
-    "body": "5 to 1",
-    "icon": "firebase-icon.png",
-    "click_action": "http://localhost:8081"
-  },
-  "to": "YOUR-IID-TOKEN"
-}
-```
-
-### cURL
-```
-curl -X POST -H "Authorization: key=YOUR-SERVER-KEY" -H "Content-Type: application/json" -d '{
-  "notification": {
-    "title": "Portugal vs. Denmark",
-    "body": "5 to 1",
-    "icon": "firebase-icon.png",
-    "click_action": "http://localhost:8081"
-  },
-  "to": "YOUR-IID-TOKEN"
-}' "https://fcm.googleapis.com/fcm/send"
-```
-
-- When the app has the browser focus , the received message is handled through
-  the `onMessage` callback in index.html. When the app does not have browser
-  focus then the `setBackgroundMessageHandler` callback in firebase-messaging-sw.js
-  is where the received message is handled.
-
-### App focus
-The browser gives your app focus when both:
-
-1. Your app is running in the currently selected browser tab.
-2. The browser tab's window currently has focus, as defined by the operating system.
+- Create your project on the [Firebase Console](https://console.firebase.google.com).
+- From your Firebase project console, click on red circle button with the caption "Add Firebase to your web app".
+![Alt text](/database/pics/redcircle.png?raw=true "Red Circle")
+- Copy the initialization snippet into the index.html file by clicking the red HTML.
+![Alt text](/database/pics/snippet.png?raw=true "Snippet")
+- The snippet should be placed in the `<head>` section of `index.html`.
+- Enable Google auth in the **Auth > SIGN IN METHOD** tab.
+![Alt text](/database/pics/enable.png?raw=true "Enable google auth")
+- Run `firebase serve` using the Firebase CLI tool to launch a local server.
 
 Support
 -------
 
-https://firebase.google.com/support/
+- [Firebase Support](https://firebase.google.com/support/)
 
 License
 -------
