@@ -44,18 +44,18 @@
 
   <link rel="stylesheet" href="main.css">
 
-  <!-- Firebase -->
-  <!-- *******************************************************************************
-       * TODO(DEVELOPER): Paste the initialization snippet by navigating to:
-
-        https://console.firebase.google.com
-
-       and choosing a project you've created.  Then click the red HTML logo at the top
-       right of the page with the caption "Add Firebase to your web app".
-
-       Copy the snippet that appears in place of this comment.
-       *************************************************************************** -->
-
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAizonfYQ1aUyGchO76WzHmQLfYLU48rgw",
+    authDomain: "tulgapp-ba512.firebaseapp.com",
+    databaseURL: "https://tulgapp-ba512.firebaseio.com",
+    storageBucket: "tulgapp-ba512.appspot.com",
+    messagingSenderId: "567613303158"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
